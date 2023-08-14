@@ -20,15 +20,21 @@ class Lobby extends Phaser.Scene {
 
         this.unlockAudioContext(this.sound);
 
-        this.add.image(0, 0, 'main').setOrigin(0);
-        this.platform = this.physics.add.image(50, 550, 'platform');
+        this.add.image(0, 0, 'lobby').setOrigin(0);
 
-        this.player = this.physics.add.sprite(100, 50, 'cat');
+        let tiles = this.physics.add.staticGroup();
 
-        this.player.setBounce(0.2);
+        tiles.create(100, 605, 'tile').setScale(.4).refreshBody();
+
+        this.player = this.physics.add.sprite(140, 50, 'character_1');
         this.player.setCollideWorldBounds(true);
 
-        this.physics.add.collider(this.player, this.platform);
+        this.physics.add.collider(this.player, tiles);
+        /*
+
+        
+
+        
 
         this.anims.create({
             key: 'left',
@@ -48,7 +54,7 @@ class Lobby extends Phaser.Scene {
             frames: this.anims.generateFrameNumbers('cat', { start: 0, end: 3 }),
             frameRate: 10,
             repeat: -1
-        });
+        });*/
 
     }
 
@@ -60,7 +66,7 @@ class Lobby extends Phaser.Scene {
             this.scene.switch('MenuScene');
         };
 
-        let cursors = this.input.keyboard.createCursorKeys();
+        /*let cursors = this.input.keyboard.createCursorKeys();
 
         if (cursors.left.isDown) {
             this.player.setVelocityX(-160);
@@ -80,7 +86,7 @@ class Lobby extends Phaser.Scene {
 
         if (cursors.up.isDown && this.player.body.touching.down) {
             this.player.setVelocityY(-330);
-        }
+        }*/
     }
 
     unlockAudioContext(audioCtx) {

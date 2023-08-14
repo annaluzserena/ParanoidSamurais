@@ -13,12 +13,13 @@ class MenuScene extends Phaser.Scene {
     create(data) {
         // Used to add objects to your game
         this.add.image(this.game.renderer.width / 2, this.game.renderer.height * 0.20, 'logo').setDepth(1).setScale(.3);
+        this.add.image(this.game.renderer.width / 2, this.game.renderer.height / 2.5, 'title').setDepth(1);
         if (this.scene.isSleeping('LobbyScene')) {
-            var resumeButton = this.add.image(this.game.renderer.width / 2, this.game.renderer.height / 2, 'resume').setDepth(1).setScale(.3);
+            var resumeButton = this.add.image(this.game.renderer.width / 2, this.game.renderer.height - 200, 'resume').setDepth(1).setScale(.3);
         } else {
-            var playButton = this.add.image(this.game.renderer.width / 2, this.game.renderer.height / 2, 'play').setDepth(1).setScale(.2);
+            var playButton = this.add.image(this.game.renderer.width / 2, this.game.renderer.height - 200, 'play').setDepth(1).setScale(.2);
         }
-        this.add.image(0, 0, 'menu').setOrigin(0).setDepth(0);
+        this.add.image(this.game.renderer.width / 2, this.game.renderer.height / 2, 'menu').setDepth(0).setScale(2);
 
         this.sound.pauseOnBlur = false;
         this.sound.play('music_theme_loop', {

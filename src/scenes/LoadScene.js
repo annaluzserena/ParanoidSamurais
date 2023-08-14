@@ -14,15 +14,23 @@ class LoadScene extends Phaser.Scene {
 
         //load image, spritesheet, sound
         this.load.image('logo', '/assets/logo_white.png');
+        this.load.image('title', '/assets/title.png');
         this.load.image('play', '/assets/play_button_2.png');
         this.load.image('resume', '/assets/resume_button.png');
         this.load.image('main', '/assets/backgrounds/main.png');
         this.load.image('menu', '/assets/backgrounds/menu-dark.jpg');
-        this.load.image('platform', '/assets/platform.png');
+        this.load.image('lobby', '/assets/backgrounds/lobby.png');
+        this.load.image('tile', '/assets/objects/transparent_tile.png');
 
         this.load.spritesheet('cat', '/assets/sprites/cat.png', {
             frameWidth: 32, 
             frameHeight: 32
+        });
+
+        this.load.spritesheet('character_1', '/assets/sprites/character_1.png', {
+            frameWidth: 32,
+            frameHeight: 48,
+            startFrame: 3
         });
 
         this.load.spritesheet('character_2', '/assets/sprites/character_2.png', {
