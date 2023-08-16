@@ -1,15 +1,9 @@
 # 🚀 Welcome to your new awesome project!
 
-This project has been created using **webpack-cli**, you can now run
+Este proyecto fue creado usando **node.js**, podés ejecutar
 
 ```
-npm run build
+node server.js
 ```
 
-or
-
-```
-yarn build
-```
-
-to bundle your application
+para verlo localmente.
